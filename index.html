@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mindoku — AI Sudoku Coach</title>
+  <meta name="description" content="Mindoku is a modern Sudoku platform with daily challenges, AI-style coaching, notes, stats, leaderboards and Pro monetization concept." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">M</div>
+        <div>
+          <h1>Mindoku</h1>
+          <p>AI-powered Sudoku for daily brain training</p>
+        </div>
+      </div>
+      <nav class="top-actions">
+        <button id="themeBtn" class="ghost-btn" type="button">🌙 Theme</button>
+        <button id="proBtn" class="pro-btn" type="button">Upgrade to Pro</button>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <section class="hero-card">
+        <div class="hero-copy">
+          <span class="badge">Daily Challenge • AI Coach • City Leaderboard</span>
+          <h2>Sudoku that teaches you how to think.</h2>
+          <p>
+            Play unique puzzles, track your progress, compete with your city, and use the AI Coach to understand the logic behind each move.
+          </p>
+        </div>
+        <div class="profile-card">
+          <label for="playerName">Player</label>
+          <div class="profile-row">
+            <input id="playerName" maxlength="18" placeholder="Your name" />
+            <select id="citySelect" aria-label="City">
+              <option>Almaty</option>
+              <option>Astana</option>
+              <option>Shymkent</option>
+              <option>Karaganda</option>
+              <option>Ridder</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="game-panel">
+        <div class="game-toolbar">
+          <div>
+            <p class="eyebrow">Current mode</p>
+            <h3 id="modeTitle">Classic Puzzle</h3>
+          </div>
+          <div class="metrics">
+            <div><span id="timer">00:00</span><small>Time</small></div>
+            <div><span id="mistakes">0</span><small>Mistakes</small></div>
+            <div><span id="hints">3</span><small>Hints</small></div>
+          </div>
+        </div>
+
+        <div class="difficulty-row" role="group" aria-label="Difficulty levels">
+          <button class="difficulty active" data-level="easy">Easy</button>
+          <button class="difficulty" data-level="medium">Medium</button>
+          <button class="difficulty" data-level="hard">Hard</button>
+          <button class="difficulty" data-level="expert">Expert</button>
+          <button id="dailyBtn" class="daily-btn">Today’s Challenge</button>
+        </div>
+
+        <div class="board-wrap">
+          <div id="sudokuBoard" class="sudoku-board" aria-label="Sudoku board"></div>
+        </div>
+
+        <div class="number-pad" aria-label="Number pad">
+          <button data-number="1">1</button>
+          <button data-number="2">2</button>
+          <button data-number="3">3</button>
+          <button data-number="4">4</button>
+          <button data-number="5">5</button>
+          <button data-number="6">6</button>
+          <button data-number="7">7</button>
+          <button data-number="8">8</button>
+          <button data-number="9">9</button>
+          <button data-number="0" class="erase">⌫</button>
+        </div>
+
+        <div class="action-grid">
+          <button id="notesBtn" class="secondary-btn">Notes: Off</button>
+          <button id="checkBtn" class="secondary-btn">Check</button>
+          <button id="hintBtn" class="secondary-btn">Hint</button>
+          <button id="coachBtn" class="secondary-btn">AI Coach</button>
+          <button id="newGameBtn" class="primary-btn">New Puzzle</button>
+        </div>
+      </section>
+
+      <aside class="side-panel">
+        <section class="card coach-card">
+          <div class="card-head">
+            <h3>AI Coach</h3>
+            <span>Learn, don’t guess</span>
+          </div>
+          <p id="coachText">
+            Select an empty cell and press “AI Coach”. I will explain which candidates are possible and why.
+          </p>
+        </section>
+
+        <section class="card stats-card">
+          <div class="card-head">
+            <h3>Your Stats</h3>
+            <span>Saved locally</span>
+          </div>
+          <div class="stats-grid">
+            <div><strong id="statPlayed">0</strong><small>Played</small></div>
+            <div><strong id="statSolved">0</strong><small>Solved</small></div>
+            <div><strong id="statBest">—</strong><small>Best time</small></div>
+            <div><strong id="statStreak">0</strong><small>Daily streak</small></div>
+          </div>
+        </section>
+
+        <section class="card leaderboard-card">
+          <div class="card-head">
+            <h3>City Leaderboard</h3>
+            <span id="leaderboardCity">Almaty</span>
+          </div>
+          <ol id="leaderboard"></ol>
+        </section>
+      </aside>
+    </main>
+  </div>
+
+  <div id="winModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button class="modal-close" data-close="winModal">×</button>
+      <h2>Excellent solve 🎉</h2>
+      <p id="winText">You completed the puzzle.</p>
+      <button id="modalNewGame" class="primary-btn">Play another puzzle</button>
+    </div>
+  </div>
+
+  <div id="proModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-card pricing-card">
+      <button class="modal-close" data-close="proModal">×</button>
+      <span class="badge">Startup prototype</span>
+      <h2>Mindoku Pro</h2>
+      <p>Premium brain training for competitive Sudoku players.</p>
+      <div class="pricing-grid">
+        <div class="price-box">
+          <h3>Free</h3>
+          <strong>$0</strong>
+          <p>Daily puzzle, basic hints, local stats.</p>
+        </div>
+        <div class="price-box featured">
+          <h3>Pro</h3>
+          <strong>$2.99/mo</strong>
+          <p>Unlimited AI Coach, custom skins, advanced analytics, no ads.</p>
+        </div>
+      </div>
+      <button class="primary-btn">Stripe checkout placeholder</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
