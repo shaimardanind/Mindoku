@@ -1,113 +1,149 @@
-# Mindoku — AI-Powered Sudoku Platform
+# Mindoku — Smart Sudoku Web Platform
 
-Mindoku is a modern web platform for playing Sudoku. It is designed as a startup-style product prototype, not just a basic puzzle website.
+Mindoku is a modern web platform for playing Sudoku, created not just as a puzzle game, but as a daily brain-training product.
 
-## Product idea
+The goal of this project is to show how a simple logic game can be turned into a real digital service with user retention, learning features, competition, and monetization potential.
 
-Most Sudoku websites only let users fill a 9x9 board. Mindoku focuses on learning, retention and competition:
+---
 
-- users return every day for a Daily Challenge;
-- players compete through a city leaderboard;
-- the AI Coach explains the logic behind moves;
-- stats and streaks motivate progress;
-- the Pro page demonstrates a monetization path.
+## Live Demo
 
-## Target audience
+Add your deployed project link here:
 
-Mindoku is for students, puzzle lovers, and people who want a short daily brain-training routine. It can also help beginners learn Sudoku strategies instead of simply guessing numbers.
+https://your-username.github.io/mindoku/
 
-## Features
+---
 
-- Responsive Sudoku board for desktop and mobile
-- Unique Sudoku puzzle generator
-- Four difficulty levels: Easy, Medium, Hard, Expert
-- Daily Challenge generated from the current date
-- Rule checking and mistake tracking
+## GitHub Repository
+
+Add your GitHub repository link here:
+
+https://github.com/your-username/mindoku
+
+---
+
+## Product Idea
+
+Most Sudoku websites only allow users to solve puzzles. Mindoku goes further by combining classic Sudoku gameplay with smart hints, progress tracking, daily challenges, and an AI Coach concept.
+
+Mindoku is designed for people who want to train their logic, improve concentration, and build a daily brain-training habit.
+
+---
+
+## Target Audience
+
+- Students who want to improve logical thinking
+- Puzzle lovers
+- People who enjoy daily brain-training games
+- Competitive users who like rankings and challenges
+- Beginners who want to learn Sudoku strategies
+
+---
+
+## Key Features
+
+- Interactive 9x9 Sudoku board
+- Multiple difficulty levels
+- Sudoku puzzle generator
 - Timer
-- Notes mode for candidate numbers
-- Hint system
-- AI Coach explanation panel
-- Local player profile
-- City-based leaderboard prototype
-- User statistics: played games, solved games, best time, daily streak
-- Light and dark themes
-- Upgrade to Pro pricing screen
-- LocalStorage persistence for profile, stats and leaderboard
+- Mistake tracking
+- Notes mode
+- Smart hints
+- AI Coach concept with logic-based explanations
+- Daily Challenge concept
+- City-based leaderboard concept
+- Player statistics
+- Light and dark theme
+- Responsive design for desktop and mobile
+- Upgrade to Pro concept
 
-## Tech stack
+---
 
-- HTML5
-- CSS3
-- Vanilla JavaScript
+## AI Coach Concept
+
+Mindoku includes an AI Coach idea that helps users understand Sudoku logic instead of simply giving them the answer.
+
+The coach can explain why a number fits a specific cell by analyzing the row, column, and 3x3 box. This makes the platform more educational and useful for beginners.
+
+---
+
+## Daily Challenge
+
+The Daily Challenge concept is designed to increase user retention. Every day, users can solve a special Sudoku puzzle and compare their result with other players.
+
+This feature turns Mindoku from a one-time game into a platform users can return to every day.
+
+---
+
+## Leaderboard Concept
+
+Mindoku includes a leaderboard idea where users can compete by time, accuracy, and city.
+
+Example:
+
+- Top players from Almaty
+- Top players from Astana
+- Global ranking by completion time
+- Accuracy-based ranking
+
+This adds a social and competitive layer to the product.
+
+---
+
+## Monetization Concept
+
+The project includes an Upgrade to Pro concept.
+
+Possible Pro features:
+
+- Unlimited AI Coach explanations
+- Advanced statistics
+- Custom themes
+- More difficult puzzle packs
+- Competitive mode
+- Premium visual skins
+
+This shows how the project could potentially grow into a real startup product.
+
+---
+
+## Tech Stack
+
+- HTML
+- CSS
+- JavaScript
 - LocalStorage
+- GitHub Pages for deployment
 
-The project intentionally has no heavy dependencies, so it can be deployed quickly on Vercel, Netlify, GitHub Pages, Replit or any static hosting provider.
+---
 
-## Why this is valuable
+## Why This Project Is Valuable
 
-Mindoku is not only a Sudoku board. It shows product thinking through:
+Mindoku is not just another Sudoku website. It is designed as a startup-style prototype with a focus on:
 
-1. **Retention** — Daily Challenge and streaks.
-2. **Learning** — AI Coach explains why a number fits.
-3. **Competition** — city leaderboard creates social motivation.
-4. **Monetization** — Pro page with premium features.
-5. **Accessibility** — clean responsive design, keyboard input and mobile number pad.
+- User experience
+- Learning
+- Daily engagement
+- Competition
+- Personal progress
+- Monetization potential
 
-## How to run locally
+The project demonstrates both technical implementation and product thinking.
 
-Open `index.html` in a browser.
+---
 
-For a local server, you can use:
+## Future Improvements
 
-```bash
-python3 -m http.server 5173
-```
+- Real user authentication
+- Database integration with Supabase or Firebase
+- Real global leaderboard
+- Real AI integration for advanced coaching
+- User profiles
+- Multiplayer speed challenges
+- Stripe integration for Pro subscription
 
-Then open:
+---
 
-```text
-http://localhost:5173
-```
+## Author
 
-## How to deploy
-
-### Option 1: Vercel
-
-1. Push this folder to GitHub.
-2. Go to Vercel.
-3. Import the GitHub repository.
-4. Select static project settings.
-5. Deploy.
-
-### Option 2: Netlify
-
-1. Push this folder to GitHub.
-2. Go to Netlify.
-3. Create a new site from Git.
-4. Select the repository.
-5. Deploy.
-
-### Option 3: GitHub Pages
-
-1. Push the files to a GitHub repository.
-2. Open repository settings.
-3. Go to Pages.
-4. Choose the main branch and root folder.
-5. Save and wait for the public link.
-
-## Future improvements
-
-- Real authentication through Supabase or Firebase
-- Real database leaderboard
-- Stripe checkout integration
-- Multiplayer speed battles
-- Advanced solving strategies: naked singles, hidden singles, pairs
-- Custom skins and sound effects
-- Internationalization
-
-## Submission links
-
-Add your final links here before submitting:
-
-- Live project: `https://your-project-link.com`
-- GitHub repository: `https://github.com/your-username/mindoku`
+Created by Shaimardan Indira.
