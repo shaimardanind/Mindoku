@@ -8,17 +8,17 @@ The goal of this project is to show how a simple logic game can be turned into a
 
 ## Live Demo
 
-Add your deployed project link here:
+Deployed project link here:
 
-https://your-username.github.io/mindoku/
+https://shaimardanind.github.io/Mindoku/
 
 ---
 
 ## GitHub Repository
 
-Add your GitHub repository link here:
+GitHub repository link here:
 
-https://github.com/your-username/mindoku
+https://github.com/shaimardanind/Mindoku
 
 ---
 
